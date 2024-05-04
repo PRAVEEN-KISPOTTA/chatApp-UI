@@ -59,25 +59,28 @@ class Chat extends Component {
       <div className="chat-app">
         <Header />
         <div
-          className="message-thread px-8 py-4 mt-16 overflow-y-auto"
+          className="message-thread px-8 py-4 mt-16"
           ref={this.messageThreadRef} // Attach the ref to the message thread
         >
           {messages.map((msg, index) => (
-            <div key={index} className="message flex">
+            <div key={index} className="message flex border mb-6">
               <div className="message-info">
                 <div className="user font-cursive">{msg.user}</div>
 
                 <div className="flex border border-transparent rounded-2xl rounded-es-none px-4 py-2 bg-green-600 text-white font-cursive">
                   <p className="message-text">{msg.text}</p>
-                  <button
+                  
+                </div>
+              </div>
+              <div className="border flex items-end -ml-8 -mb-4">
+                <button
                     className="like-button"
                     onClick={() => this.handleLike(index)}
                   >
                     👍
                   </button>
+                <span className="like-count font-semibold">{msg.likes}</span>
                 </div>
-                <span className="like-count">{msg.likes}</span>
-              </div>
             </div>
           ))}
         </div>
