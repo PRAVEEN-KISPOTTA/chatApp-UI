@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        'secondary':'#ED553D'
+      },
       fontFamily: {
         cursive: ['"Comic Sans MS"', 'cursive'],
       },
